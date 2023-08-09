@@ -2,7 +2,7 @@
 
 ### Inspired by [@Kkkiiiirran](https://github.com/Kkkiiiirran)
 
-![Hero section preview](public/img/screen-record.mp4)
+![Hero section preview](public/img/screenshot.png)
 
 ### About
 DeliMeals is a restaurant website that aims to combine culinary mastery with exceptional hospitality. Our goal is to create a dining experience that will leave you craving for more. From delectable dishes to a warm and inviting ambiance, DeliMeals is your destination for an unforgettable dining experience.
