@@ -31,20 +31,21 @@ const Hero = () => {
         className="w-full h-full overflow-hidden absolute top-0 left-0 opacity-30"
       />
       <div className="w-full h-full overflow-hidden absolute top-0 left-0 backdrop-blur-3xl" />
-      <div className="w-full h-full overflow-hidden relative flex items-center justify-between text-light">
-        <div className="md:w-7/12 px-20">
-          <h1 className="font-bold leading-[70px] text-6xl ">
+      <div className="w-full h-full overflow-hidden relative flex flex-wrap-reverse content-between items-center justify-between text-light">
+        <div className="sm:w-8/12 md:w-7/12 px-6 lg:px-20 text-center sm:text-left pb-[3vh] sm:pb-0">
+          <h1 className="font-bold lg:leading-[70px] text-2xl sm:text-4xl lg:text-6xl ">
             Delight Your Senses with Delicious Delights
           </h1>
-          <h2 className="font-[500] text-lg w-10/12 leading-[20px] my-5 opacity-70">
+          <h2 className="lg:font-[500] text-lg sm:w-10/12 leading-[20px] my-5 opacity-90">
             At DeliMeals, we combine culinary mastery with exceptional
             hospitality to create a dining experience that will leave you
             craving for more
           </h2>
-          <div className="w-6/12">
+          <div className="w-full md:w-8/12 xl:w-7/12">
             <div className="flex">
               {meals.map(({ title }, i) =>
                 <div
+                  key={title}
                   onClick={() => setMealIndex(i)}
                   className="w-3/12 p-2 aspect-[1/1] text-center flex flex-col items-center justify-center cursor-pointer group"
                 >
@@ -71,7 +72,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="md:w-5/12 relative h-full flex flex-col justify-center">
+        <div className="w-full sm:w-4/12 md:w-5/12 relative sm:h-full flex flex-col justify-center h-[50vh] scale-[0.65] sm:scale-100">
           <AnimatePresence mode="popLayout">
             {meals.map(
               ({ title }, i) =>
@@ -80,7 +81,6 @@ const Hero = () => {
                   key={title}
                   src={`/img/${title}.png`}
                   alt={title}
-                  className="w-[120%]"
                   initial={{
                     translateX: "70%",
                     translateY: "-110%",
