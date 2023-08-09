@@ -1,15 +1,38 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+const exit = {
+  translateX: "70%",
+  translateY: "110%",
+  scale: 0.8,
+  opacity: 0
+};
+const enter = {
+  translateX: "70%",
+  translateY: "-110%",
+  scale: 0.9,
+  opacity: 0
+};
+/**
+ * Renders the Hero section of the website.
+ * Displays a dynamic background color and a list of meals.
+ */
 const Hero = () => {
+  /**
+   * State variables
+   */
   const [mealIndex, setMealIndex] = useState(0);
   const [mealColor, setMealColor] = useState(meals[0].color);
+  /**
+   * Effect hook to update the meal color when the meal index changes
+   */
   useEffect(
     () => {
       setMealColor(meals[mealIndex].color);
     },
     [mealIndex]
   );
+
   return (
     <section className="h-screen overflow-hidden relative">
       <div className="w-full h-full overflow-hidden absolute">
@@ -81,24 +104,14 @@ const Hero = () => {
                   key={title}
                   src={`/img/${title}.png`}
                   alt={title}
-                  initial={{
-                    translateX: "70%",
-                    translateY: "-110%",
-                    scale: 0.9,
-                    opacity: 0
-                  }}
+                  initial={enter}
                   animate={{
                     translateX: "0%",
                     translateY: "0%",
                     scale: 1.2,
                     opacity: 1
                   }}
-                  exit={{
-                    translateX: "70%",
-                    translateY: "110%",
-                    scale: 0.8,
-                    opacity: 0
-                  }}
+                  exit={exit}
                   transition={{
                     type: "spring",
                     damping: 5,
