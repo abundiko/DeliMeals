@@ -106,7 +106,6 @@ const Hero = () => {
                   }}
                 />
             )}
-            {/* <motion.img whileHover={{ translateX: "70%", translateY: "110%" }} src="/img/chicken.png" alt="" className="w-[120%]" /> */}
           </AnimatePresence>
         </div>
       </div>
